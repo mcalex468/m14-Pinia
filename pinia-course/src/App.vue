@@ -17,7 +17,7 @@ productStore.fill()
         v-for="product in productStore.products"
         :key="product.name"
         :product="product"
-        @addToCart="cartStore.items.push(product)"
+        @addToCart="addToCart($event,product)"
       />
     </ul>
   </div>
