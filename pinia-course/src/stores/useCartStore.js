@@ -1,17 +1,16 @@
 import { defineStore } from "pinia";
-
 export const useCartStore = defineStore("CartStore", {
-    state: () => {
-        return {
-            items: [],
-        }
+  state: () => {
+    return {
+      items: [],
+    };
+  },
+  actions: {
+    addItems(count, item) {
+      count = parseInt(count);
+      for (let index = 0; index < count; index++) {
+        this.items.push({ ...item });
+      }
     },
-    actions: () => {
-        const addToCart = (count, product) => {
-            count = parseInt(count)
-            for (let index = 0; index < count; index++) {
-                useCartStore.items.push(product);
-            }
-        }
-    }
+  },
 });
