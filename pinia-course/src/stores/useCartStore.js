@@ -16,11 +16,6 @@ export const useCartStore = defineStore("CartStore", {
       }
     },
     setItemCount(item, count) {
-      // Si la quantitat és 0 o negativa, eliminem el producte del carret
-      if (count <= 0) {
-        this.clearItem(item.name);
-        return;
-      }
       // Busquem l'índex del producte dins del carret
       const index = this.items.findIndex((i) => i.name === item.name);
       // Si el producte existeix, actualitzem la quantitat
@@ -31,7 +26,7 @@ export const useCartStore = defineStore("CartStore", {
     },
     checkout() {
       const authUserStore = useAuthUserStore();
-      alert(`${authUserStore.username} name just bought ${this.count} items at a total of $${this.total}`)
+      alert(`${authUserStore.username} name just bought ${this.count} items at a total of $${this.totalPrice}`)
     },
 
 
