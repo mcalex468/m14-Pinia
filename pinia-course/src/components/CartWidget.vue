@@ -6,9 +6,9 @@ import { useCartStore } from "../stores/useCartStore";
 
 const cartStore = useCartStore()
 
-
 // data
 const active = ref(false);
+
 </script>
 <template>
   <div class="relative">
